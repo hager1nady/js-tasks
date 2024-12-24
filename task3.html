@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-js-3</title>
+    <style>
+        .container {
+            width: 60%;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        @media (max-width:767px) {
+            .container {
+                width: 90%;
+                margin: auto;
+            }
+        }
+
+        div {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-family: sans-serif;
+            margin-bottom: 10px;
+            color: #777777;
+            display: block;
+        }
+
+        input {
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 8px;
+            width: 98%;
+            transition: 0.3s;
+            outline: none;
+        }
+
+        input:hover {
+            background-color: #77777727;
+        }
+
+        input[type="submit"] {
+            background-color: rgba(226, 156, 43, 0.623);
+            padding: 8px 15px;
+            border: none;
+            border-radius: 10px;
+            transition: 0.3s;
+            cursor: pointer;
+            color: white;
+            font-size: 18px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(226, 156, 43);
+        }
+
+        h1 {
+            font-size: 18px;
+            font-family: sans-serif;
+            color: #777777;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <label for="day">Please Enter Your Favorit Day :</label>
+            <input type="text" name="day" id="day">
+        </div>
+        <input type="submit" value="Display Message" onclick="days()">
+        <h1 id="display_message"></h1>
+    </div>
+
+    <script>
+        function days() {
+            let userDay = document.getElementById('day').value.toString().toLowerCase();
+            switch (userDay) {
+                case "saturday":
+                case "sunday":
+                    document.getElementById('display_message').innerHTML = `Your Day Is ${userDay.toUpperCase()} Week End ? Focus And Start Your Week`
+                    break;
+                case "monday":
+                    document.getElementById('display_message').innerHTML = `Your Day Is ${userDay.toUpperCase()} Good Start To The Week`
+                    break;
+                case "tusday":
+                    document.getElementById('display_message').innerHTML = `Your Day Is ${userDay.toUpperCase()} Have A Nice Day`
+                    break;
+                case "wednesday":
+                    document.getElementById('display_message').innerHTML = `Your Day Is ${userDay.toUpperCase()} Have A Nice Day`
+                    break;
+                case "thursday":
+                    document.getElementById('display_message').innerHTML = `Your Day Is ${userDay.toUpperCase()} Have A Nice Day`
+                    break;
+                case "friday":
+                    document.getElementById('display_message').innerHTML = `Your Day Is ${userDay.toUpperCase()}  Have A Blessed Friday`
+                    break;
+                default:
+                    document.getElementById('display_message').innerHTML = `Please Enter A Day Of The Week`
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
