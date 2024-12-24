@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task1-js</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container {
+        width: 60%;
+        margin: 50px auto;
+    }
+
+    .container div {
+        margin-bottom: 20px;
+        color: #777777;
+        font-family: sans-serif;
+    }
+
+    .container>div label {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .container>div input {
+        width: 100%;
+        padding: 8px 10px;
+        outline: none;
+        border: none;
+        border: 1px solid #eee;
+        background-color: #eeeeee1f;
+        transition: 0.3s;
+    }
+
+    .container>div input:hover {
+        background-color: #eee;
+    }
+
+    .container>div input[type="submit"] {
+        width: 100%;
+        font-size: 20px;
+        background-color: rgba(100, 148, 237, 0.826);
+        color: white;
+        transition: 0.3s;
+        border: 1px solid rgba(100, 148, 237, 0.826);
+    }
+
+    .container>div input[type="submit"]:hover {
+        background-color: cornflowerblue;
+    }
+
+    .container>div:last-of-type {
+        padding:20px 15px;
+        background-color: rgba(100, 148, 237, 0.171);
+    }
+
+    .container>div:last-of-type h1 {
+        font-family: sans-serif;
+        font-size: 17px;
+        color: cornflowerblue;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div>
+            <label for="name">UserName :</label>
+            <input type="text" id="name" name="username">
+        </div>
+        <div>
+            <label for="age">UserAge :</label>
+            <input type="number" id="age" name="userage">
+        </div>
+        <div>
+            <label for="hoppy">Favorite Hoppy :</label>
+            <input type="text" id="hoppy" name="favehoppy">
+        </div>
+        <div>
+            <input type="submit" value="Display Message" onclick="displayUserData()">
+        </div>
+
+        <div>
+            <h1 id="favehoppy"></h1>
+        </div>
+    </div>
+    <script>
+
+        function displayUserData() {
+            let userName = document.getElementById('name').value
+            let userAge = document.getElementById('age').value
+            let faveHoppy = document.getElementById('hoppy').value
+            document.getElementById('favehoppy').innerHTML = `Hello ${userName.toUpperCase()} Your Age Is ${userAge} And Your Favorite Hopppy Is ${faveHoppy.toUpperCase()}`
+        }
+
+    </script>
+</body>
+
+</html>
