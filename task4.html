@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task4-js</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            font-family: sans-serif;
+            width: 40%;
+            margin: 50px auto;
+        }
+
+        .container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container h3 {
+            text-align: center;
+            margin: 10px 0px;
+        }
+
+        .container input:first-of-type {
+            margin-bottom: 20px;
+        }
+
+        .container label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .container input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .container ol {
+            list-style: 1;
+        }
+
+        .container ol li {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .container button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            margin: 20px 0 0 0;
+            transition: 0.3s;
+        }
+
+        .container button:hover {
+            background-color: #ccc;
+        }
+
+        .container button:last-of-type {
+            margin-bottom: 20px;
+        }
+
+        .container button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>To Do List :</h1>
+        <div>
+            <label for="tasks">Add Task :</label>
+            <input type="text" name="tasks" id="tasks" placeholder="Add New Task...">
+        </div>
+        <div>
+            <label for="delete-tasks">Delete Task :</label>
+            <input type="text" name="deletetasks" id="delete-tasks" placeholder="Please Enter The Task Number">
+        </div>
+        <button type="submit" onclick="addTask()">Add Task</button>
+        <button type="submit" onclick="deleteTask()">Delete Task</button>
+        <button type="submit" onclick="sortTask()">Sort Tasks List</button>
+        <button type="submit" onclick="reSortTask()">reSort Tasks List</button>
+        <button type="submit" onclick="displayTask()">Display Tasks</button>
+        <div>
+            <h3>List Of Tasks :</h3>
+            <ol id="list">
+            </ol>
+        </div>
+
+    </div>
+    <script>
+        let arrList = ['Organize the room', 'Exercise for 30 minutes', 'Read a chapter from a book', 'Create a shopping list', 'Go for a walk', 'Clean your desk or workspace', 'Try a new recipe']
+        // add to list
+        function addTask() {
+            let list = document.getElementById('tasks').value
+            arrList.push(list)
+            displayTask()
+        }
+
+        // delete Task
+        function deleteTask() {
+            let delTask = Number(document.getElementById('delete-tasks').value)
+            arrList.splice(delTask - 1, 1)
+            displayTask()
+        }
+
+        // sorting task
+        function sortTask() {
+            arrList.sort()
+            displayTask()
+        }
+
+        // sorting task
+        function reSortTask() {
+            // arrList.sort(-1)
+            displayTask()
+        }
+
+        // display list
+        function displayTask() {
+            let listOfTasks = '';
+            for (var i = 0; i < arrList.length; i++) {
+                listOfTasks += `
+                <li>${arrList[i]}</li>
+                `
+            }
+            document.getElementById('list').innerHTML = listOfTasks
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
