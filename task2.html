@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            width: 60%;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        @media (max-width:767px) {
+            .container {
+                width: 90%;
+                margin: auto;
+            }
+        }
+
+        div {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-family: sans-serif;
+            margin-bottom: 10px;
+            color: #777777;
+            display: block;
+        }
+
+        input {
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 8px;
+            width: 98%;
+            transition: 0.3s;
+        }
+
+        input:hover {
+            background-color: #77777727;
+        }
+
+        input[type="submit"] {
+            background-color: rgba(137, 43, 226, 0.623);
+            padding: 8px 15px;
+            border: none;
+            border-radius: 10px;
+            transition: 0.3s;
+            cursor: pointer;
+            color: white;
+            font-size: 18px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: blueviolet;
+        }
+
+        h1 {
+            font-size: 20px;
+            font-family: sans-serif;
+            color: #777777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div>
+            <label for="number_one">Number One :</label>
+            <input type="text" name="number_one" id="number_one">
+        </div>
+        <div>
+            <label for="number_tow">Number Tow :</label>
+            <input type="text" name="number_tow" id="number_tow">
+        </div>
+
+        <input type="submit" value="Addition" onclick="addNumbers()">
+        <input type="submit" value="Subtraction" onclick="subNumbers()">
+        <input type="submit" value="Division" onclick="divisionNumbers()">
+        <input type="submit" value="Multiplication" onclick="mulNumbers()">
+        <h1 id="number"></h1>
+    </div>
+    <!-- <script src="index.js"></script> -->
+    <script>
+
+        // Addition Numbers
+        function addNumbers() {
+            const numberOne = Number(document.getElementById('number_one').value);
+            const numberTow = Number(document.getElementById('number_tow').value);
+            if (numberOne && numberTow !== NaN) {
+                const result = Math.round(numberOne + numberTow)
+                document.getElementById('number').innerHTML = `The Result Is ${result}`;
+            }
+            else {
+                document.getElementById('number').innerHTML = `Please Enter Only Numbers`;
+            }
+        }
+
+        // Subtraction Numbers 
+        function subNumbers() {
+            const numberOne = Number(document.getElementById('number_one').value);
+            const numberTow = Number(document.getElementById('number_tow').value);
+            if (numberOne && numberTow !== NaN) {
+                const result = Math.round(numberOne - numberTow);
+                document.getElementById('number').innerHTML = `The Result Is ${result}`;
+            }
+            else {
+                document.getElementById('number').innerHTML = `Please Enter Only Numbers`;
+            }
+        }
+
+        // Division Numbers
+        function divisionNumbers() {
+            const numberOne = Number(document.getElementById('number_one').value);
+            const numberTow = Number(document.getElementById('number_tow').value);
+            if (numberOne && numberTow !== NaN) {
+                const result = Math.round(numberOne / numberTow);
+                document.getElementById('number').innerHTML = `The Result Is ${result}`;
+            }
+            else {
+                document.getElementById('number').innerHTML = `Please Enter Only Numbers`;
+            }
+        }
+
+        // multiblication numbers 
+        function mulNumbers() {
+            const numberOne = Number(document.getElementById('number_one').value);
+            const numberTow = Number(document.getElementById('number_tow').value);
+            if (numberOne && numberTow !== NaN) {
+                const result = Math.round(numberOne * numberTow);
+                document.getElementById('number').innerHTML = `The Result Is ${result}`;
+            }
+            else {
+                document.getElementById('number').innerHTML = `Please Enter Only Numbers`;
+            }
+        }
+    </script>
+</body>
+
+</html>
